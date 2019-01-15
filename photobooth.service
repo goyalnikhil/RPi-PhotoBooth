@@ -1,0 +1,13 @@
+[Unit]
+Description=Photo Booth Service
+After=network.target
+
+[Service]
+WorkingDirectory=/home/pi/photo-booth
+ExecStart=/usr/bin/node webapp.js
+Restart=on-failure
+User=pi
+Environment=NODE_PATH=/usr/lib/node_modules
+
+[Install]
+WantedBy=multi-user.target
